@@ -1,0 +1,76 @@
+@media screen and (max-width: 1250px){
+    .container-fluid{
+        width: 100%%;
+    }
+    
+     .container-fluid,h1{
+        font-size: 0.95em;
+    }
+    
+}
+
+@media (max-width: 1621px) {
+              #reservation {
+                flex-direction: column;
+                align-items: stretch;
+              }
+              .list {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 20px;
+              }
+              .form-select {
+                width: 100%;
+                margin-bottom: 10px;
+              }
+              .reserve {
+                width: 100%;
+
+                }
+
+
+            }
+    
+
+@media screen and (max-width: 1616px) {
+			.row {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.col-md-3 {
+				flex-basis: 50%;
+				max-width: 50%;
+			}
+		}
+
+
+
+@media screen and (max-width: 767px) {
+			.row {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.col-md-3 {
+				flex-basis: 100%;
+				max-width: 100%;
+			}
+		}
+
+		/* Styles pour la card */
+		.card {
+			margin-bottom: 20px;
+		}
+
+		.card-img-top {
+			height: 100%;
+			object-fit: cover;
+		}
+
+

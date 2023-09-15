@@ -1,0 +1,50 @@
+<% layout ('layout') -%>
+
+
+<div class='container mt-4'>
+   
+   <div class='row text-center'>
+   <h3>Profil :</h3>
+   <aside class="col-sm-6 col-md-4 ml-4 mt-4">
+       
+       
+        <img src="<%= user.profile.picture %>"  alt="logo du profil" title="Profil"> 
+        <p>Nom : <%= user.profile.name %></p>
+        <p>Email : <%= user.email %></p>
+        <p>Adresse: <%= user.address %></p>
+        
+        <a href="/edit-profile" class="btn btn-warning">Editer le profil</a>
+        
+      </aside>
+  <!--  <section class="col-sm-4 col-md-5 mt-1">   
+    <h3>Historique :</h3> -->
+    
+<!--
+   <table>
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Montant</th>
+            <th>Devise</th>
+            <th>Statut</th>
+        </tr>
+    </thead>
+    <tbody>
+         charges.forEach(function(charge) { %>
+        <tr>
+            <td>< charge.created %></td>
+            <td>< charge.amount %></td>
+            <td>< charge.currency %></td>
+            <td>< charge.status %></td>
+        </tr>
+        <}); %>
+    </tbody>
+</table>
+-->
+
+
+    
+    </section>
+    
+    </div>
+</div>

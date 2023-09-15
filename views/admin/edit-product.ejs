@@ -1,0 +1,38 @@
+<% layout('layout') -%>
+
+
+<div class='container'>
+   <div class='row text-center'>
+    <div class="col-lg-6 mx-auto mt-5">   
+       <h3>Modifier un produit</h3>
+       
+  
+       
+     <form method="post" class="mt-5" enctype="multipart/form-data">
+    
+             <div class="form-group">
+              <input type="text"  name="name"  class="form-control" placeholder="Nouveau produit" value="<%= product.name %>">
+            </div>  
+               <div class="form-group">
+              <input type="number" step="0.1" min="0" name="price"  class="form-control" placeholder="prix HT" value="<%= product.price %>">
+            </div>  
+            
+         <div class="form-group">
+           <select class="form-control" name="category" id="">
+                <% for(var i =0; i< categories.length; i++){ %> 
+                <option value="<%= categories[i]._id %>" <% if(product.category == categories[i]._id) { %> selected <% } %> ><%= categories[i].name %></option>
+                 
+                  <% } %>
+           </select>
+            
+         </div>
+
+             <div class="form-group">
+                 <input type="file" name="image" class="form-control">
+             </div>
+                 <a><input type="submit" value="Modifier" class="btn btn-warning"></a>
+    </form>
+
+</div>
+</div>
+</div>

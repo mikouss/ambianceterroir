@@ -1,0 +1,59 @@
+<% layout('layout') -%>
+
+
+<div class='container'>
+   <div class='row mt-5'>
+    <div class="col-lg-8 ">   
+   <h3>Produits :</h3>  
+   
+         <% if(message.length > 0){  %>
+       
+       <div class="alert alert-success" role="alert">
+           <button type="button" class="close" data-dismiss="alert" aria-label="close"></button>
+              <span> &times;</span>
+              
+            <%= message %>  
+           
+       </div>
+       
+       <% } %>
+   
+   
+   
+  <a href="/admin/add-product" class="btn btn-warning">Ajouter un produit</a> 
+   <table class="table-striped table">
+       <thead>
+           <tr>
+            
+               <th>NOM</th>
+               <th>PRIX</th>
+               <th>ACTION</th>
+               
+           </tr>
+       </thead>
+       <tbody>
+            <% for(var i =0; i< products.length; i++){ %> 
+                <tr>
+               <td><h4><%= products[i].name %></h4></td>
+               <td><h4><%= products[i].price %>€</h4></td>
+               <td>
+               <a class="btn btn-warning" href="/admin/edit-product/<%= products[i]._id %>">Editer</a>
+               
+               <form method="get" action="/admin/delete-product/<%= products[i]._id %>">
+               <a><input type="submit" value="Supprimer" class="btn btn-danger"></a>
+            </form>
+               
+               </td>
+           </tr>
+             <% } %>
+       </tbody>
+   </table>    
+</div>
+
+<div class='col-lg-4'>
+    <%-  include ('../inc/menu-admin') %>
+
+
+</div>
+</div>
+</div>

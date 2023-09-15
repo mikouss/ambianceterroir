@@ -1,0 +1,46 @@
+<% layout('layout') -%>
+
+
+<div class='container'>
+   <div class='row text-center'>
+    <div class="col-lg-6 mx-auto mt-5">   
+       <h3>Ajouter un produit</h3>
+       
+       
+       <% if(message.length > 0){  %>
+       
+       <div class="alert alert-success" role="alert">
+           <button type="button" class="close" data-dismiss="alert" aria-label="close"></button>
+              <span> &times;</span>
+              
+            <%= message %>  
+           
+       </div>
+       
+       <% } %>
+       
+        <form method="post" class="mt-5">
+        
+                 <div class="form-group">
+                  <input type="text"  name="name"  class="form-control" placeholder="Nouveau produit">
+                </div>  
+                   <div class="form-group">
+                  <input type="number" step="0.1" min="0" name="price"  class="form-control" placeholder="prix HT">
+                </div>  
+                
+             <div class="form-group">
+               <select class="form-control" name="category" id="">
+                    <% for(var i =0; i< categories.length; i++){ %> 
+                    <option value="<%= categories[i]._id %>"><%= categories[i].name %></option>
+                     
+                      <% } %>
+               </select>
+                
+           </div>
+
+                 <a><input type="submit" value="Créer" class="btn btn-warning"></a>
+        </form>
+    
+</div>
+</div>
+</div>

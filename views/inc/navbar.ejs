@@ -1,0 +1,58 @@
+   <nav class="navbar dark-mode w-100" role="navigation" style="border: 1px solid darkred;">
+    <div class="navbar__logo" title="Ambiance Terroir">Ambiance Terroirs</div>   
+    <ul class="navbar__links">
+      <li class="navbar__link first"><a href="/home" title="Home">Accueil</a></li>
+      <li class="navbar__link second"><a href="#reservation" title="Réserver une table">Restaurant</a></li>
+      <li class="navbar__link third"><a href="#contact" title="Nous découvrir">Contact</a></li>
+      
+      
+      
+       <li class="nav-item dropdown ">
+           <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-expanded="false" role="button">Catégories</a>
+           <div class="dropdown-menu" aria-labelledby="dropdown01">
+           <!-- Boucle pour afficher toutes les catégories-->
+           
+           <% for(var i =0; i< categories.length; i++){ %>
+            
+             <a class="dropdown-item" href="/products/<%= categories[i]._id %>"><%= categories[i].name %></a>
+        
+           <% } %>
+           
+           </div>
+       </li>
+       
+       
+     <% if(!user) {%>
+      
+        <li class="navbar__link fifth"><a href="/signup" title="S'inscrire">Inscription</a></li>
+        <li class="navbar__link six"><a href="/login" title="Je me connecte">Connexion</a>
+        </li>
+   
+    <% } else{ %> 
+   
+         
+          <li class="navbar__link seven"><a href="/profile" title="Profil">Mon compte</a></li>
+        <li class="navbar__link eight"><a href="/logout" title="Je me déconnecte">Déconnexion</a></li>
+         
+           <% if(user.admin) {%>
+             <li class="navbar__link nine"><a href="/admin" title="Administration">Admin</a></li>
+            <% } else{ %> 
+          <li class="navbar__link nine" title="connecté!"><%= user.profile.name %></li>
+            <% } %>
+          
+       <% } %>
+   
+     <% if(user) { %>
+     <li class="nav-item"><a href="/cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="badge badge-warning"> <%= cart %></span></a></li>
+     
+      <% }else{ %>
+       
+     <li class="nav-item"><a href="/cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="badge badge-warning">0</span></a></li>
+     
+      <% } %>
+      
+    </ul>   
+    <button class="burger">
+      <span class="bar"></span>  
+    </button>   
+  </nav>

@@ -1,0 +1,38 @@
+<% layout ('layout') -%>
+
+
+<div class='container'>
+   <div class='row text-center'>
+    <div class="col-lg-6 mx-auto mt-5">   
+       <h3>Modifier votre profil</h3>
+       
+       <% if(message.length > 0){  %>
+       
+       <div class="alert alert-success" role="alert">
+           <button type="button" class="close" data-dismiss="alert" aria-label="close"></button>
+              <span> &times;</span>
+              
+            <%= message %>  
+           
+       </div>
+       
+       <% } %>
+       
+        <form method="post" class="mt-5">
+            
+             <div class="form-group">
+              <input type="name"  name="name"  class="form-control" placeholder="Votre Nom" value="<%= user.profile.name %>">
+            </div>  
+            
+             <div class="form-group">
+              <input type="text"  name="address"  class="form-control" placeholder="Votre Adresse" value="<%= user.address %>">
+            </div>  
+
+             <a href="/profile" class="btn btn-secondary">Retour</a>
+             <a><input type="submit" value="Modifier" class="btn btn-warning"></a>
+              
+        </form>
+    
+</div>
+</div>
+</div>

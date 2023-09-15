@@ -1,0 +1,29 @@
+<% layout('layout') -%>
+
+
+<div class='container'>
+   <div class='row text-center'>
+    <div class="col-lg-6 mx-auto mt-5">   
+       <h3>Ajouter une catégorie</h3>
+       
+     <% if (message.errors) { %>
+          <div class="alert alert-danger" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="close"></button>
+              <span> &times;</span>
+              <%= message.errors %>
+          </div>
+       <% } %>
+       
+        <form method="post" class="mt-5">
+        
+                 <div class="form-group">
+                  <input type="text"  name="name"  class="form-control" placeholder="Nouvelle Catégorie">
+                </div>  
+ 
+
+                 <a><input type="submit" value="Créer" class="btn btn-warning"></a>
+        </form>
+    
+</div>
+</div>
+</div>
